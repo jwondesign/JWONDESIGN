@@ -2855,8 +2855,8 @@ input, select, textarea {
 
 				#header .logo .symbol img {
 					display: block;
-					width: 120px;
-					height: auto;
+					width: 120px !important;
+					height: auto !important;
 				}
 
 		#header nav {
