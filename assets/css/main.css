@@ -3327,3 +3327,8 @@ input, select, textarea {
 			}
 
 		}
+/* Make logo smaller on inside pages only */
+body:not(.landing) #header .logo .symbol img {
+	width: 250px !important;   
+	height: auto !important;
+}		
