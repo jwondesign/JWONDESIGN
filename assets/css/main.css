@@ -2361,6 +2361,17 @@ input, select, textarea {
 			.image.main img {
 				width: 100%;
 			}
+			
+			.image.main.half {
+  width: 49%;           
+  display: inline-block;  
+  margin-right: 2%;       
+  vertical-align: top;    
+}
+
+.image.main.half:nth-child(2n) {
+  margin-right: 0;
+}
 
 			@media screen and (max-width: 736px) {
 
