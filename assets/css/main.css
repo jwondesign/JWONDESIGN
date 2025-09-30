@@ -3353,3 +3353,11 @@ body:not(.landing) #header .logo .symbol img {
 	width: 250px !important;   
 	height: auto !important;
 }		
+.video-container video {
+  width: 100%;          /* full width like your images */
+  height: auto;         /* maintains aspect ratio */
+  display: block;
+  border-radius: 2px;   /* same as images */
+  object-fit: cover;    /* crop if needed */
+  margin-bottom: 1.5em; /* same vertical gap as images */
+}
