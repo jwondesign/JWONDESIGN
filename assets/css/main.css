@@ -2365,7 +2365,7 @@ input, select, textarea {
 			.image-row {
   display: flex;
   align-items: stretch;      /* equal height */
-  margin-bottom: 1em;      /* vertical spacing */
+  margin-bottom: 0em;      /* vertical spacing */
   gap: 1em;                  /* fixed horizontal gap between images */
 }
 
