@@ -3361,3 +3361,12 @@ body:not(.landing) #header .logo .symbol img {
   object-fit: cover;    /* crop if needed */
   margin-bottom: 1.5em; /* same vertical gap as images */
 }
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.features article {
+  flex: 1 1 calc(33.333% - 2em); /* three per row */
+}
