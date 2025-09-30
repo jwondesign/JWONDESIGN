@@ -2362,20 +2362,28 @@ input, select, textarea {
 				width: 100%;
 			}
 			
-			.image-row {
-  display: flex;
-  align-items: stretch;   /* equal height */
-  margin-bottom: 1.5em;  /* vertical spacing */
-  gap: 0;                 /* remove fixed gap */
+			.image.main.half {
+  width: 49%;    
+  float: left;      
+  margin-right: 2%; 
+  margin-bottom: 1.5em; 
 }
 
-/* Images inside the flex row */
-.image-row img {
-  height: 300px;   /* same height for all images */
-  width: auto;     /* width adjusts to maintain aspect ratio */
-  object-fit: cover;
-  display: block;
-  flex: none;      /* do not grow/shrink; keep width proportional */
+.image.main.half:nth-of-type(2n) {
+  margin-right: 0;
+}
+
+.image.main.half:nth-of-type(2n+1) {
+  clear: left;
+}
+.image.main.half {
+  display: inline-flex;
+  align-items: flex-end;
+}
+.image.main.half img {
+  height: 30vw;      
+  width: 100%;         
+  object-fit: cover;   
 }
 
 			@media screen and (max-width: 736px) {
@@ -2383,16 +2391,6 @@ input, select, textarea {
 				.image.main {
 					margin: 0 0 2em 0;
 				}
-				.image-row {
-    flex-direction: column; /* stack images vertically */
-  }
-
-  .image-row img {
-    height: auto;           /* natural height on mobile */
-    width: 100%;            /* fill container width */
-    object-fit: contain;    /* no cropping on mobile */
-  }
-}
 
 			}
 
