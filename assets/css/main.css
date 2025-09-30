@@ -2365,12 +2365,12 @@ input, select, textarea {
 			.image-row {
   display: flex;
   align-items: stretch;      /* equal height */
-  margin-bottom: 1.5em;      /* vertical spacing */
+  margin-bottom: 1em;      /* vertical spacing */
   gap: 1em;                  /* fixed horizontal gap between images */
 }
 
 .image-row img {
-  height: 300px;             /* all images same height */
+  height: 500px;             /* all images same height */
   width: auto;               /* width scales proportionally */
   object-fit: cover;         /* crop if necessary */
   display: block;
