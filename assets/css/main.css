@@ -2380,6 +2380,11 @@ input, select, textarea {
   display: inline-flex;
   align-items: flex-end;
 }
+.image.main.half img {
+  height: 30vw;      
+  width: 100%;         
+  object-fit: cover;   
+}
 
 			@media screen and (max-width: 736px) {
 
