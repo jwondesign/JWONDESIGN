@@ -2377,9 +2377,8 @@ input, select, textarea {
   clear: left;
 }
 .image.main.half img {
-  height: 500px;      /* adjust to what looks best */
-  object-fit: cover;  /* crop to fill the box */
-  width: 100%;
+  display: inline-flex;
+  align-items: flex-end;
 }
 
 			@media screen and (max-width: 736px) {
