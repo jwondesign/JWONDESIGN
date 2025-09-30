@@ -2366,7 +2366,7 @@ input, select, textarea {
   width: 49%;    
   float: left;      
   margin-right: 2%; 
-  margin-bottom: 10px; 
+  margin-bottom: 1.5em; 
 }
 
 .image.main.half:nth-of-type(2n) {
@@ -2380,7 +2380,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 
 				.image.main {
-					margin: 0 0 3em 0;
+					margin: 0 0 2em 0;
 				}
 
 			}
