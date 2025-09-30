@@ -2362,37 +2362,34 @@ input, select, textarea {
 				width: 100%;
 			}
 			
-			.image.main.half {
-  width: 49%;    
-  float: left;      
-  margin-right: 2%; 
-  margin-bottom: 1.5em; 
+			.image-row {
+  display: flex;
+  align-items: stretch;      /* equal height */
+  margin-bottom: 1.5em;      /* vertical spacing */
+  gap: 1em;                  /* fixed horizontal gap between images */
 }
 
-.image.main.half:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-.image.main.half:nth-of-type(2n+1) {
-  clear: left;
-}
-.image.main.half {
-  display: inline-flex;
-  align-items: flex-end;
-}
-.image.main.half img {
-  height: 30vw;      
-  width: 100%;         
-  object-fit: cover;   
+.image-row img {
+  height: 300px;             /* all images same height */
+  width: auto;               /* width scales proportionally */
+  object-fit: cover;         /* crop if necessary */
+  display: block;
 }
 
 			@media screen and (max-width: 736px) {
+  .image-row {
+    flex-direction: column; /* stack vertically */
+  }
 
-				.image.main {
-					margin: 0 0 2em 0;
-				}
+  .image-row img {
+    width: 100%;            /* fill container */
+    height: auto;           /* natural height */
+    object-fit: contain;    /* no cropping */
+  }
+}
 
-			}
+
+		
 
 /* Table */
 
