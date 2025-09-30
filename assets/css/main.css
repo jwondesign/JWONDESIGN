@@ -2362,28 +2362,19 @@ input, select, textarea {
 				width: 100%;
 			}
 			
-			.image.main.half {
-  width: 49%;    
-  float: left;      
-  margin-right: 2%; 
-  margin-bottom: 1.5em; 
+			.image-row {
+  display: flex;          /* arrange images in a row */
+  gap: 1em;               /* horizontal space between images */
+  align-items: stretch;   /* make all images same height */
+  margin-bottom: 1.5em;   /* vertical spacing below row */
 }
 
-.image.main.half:nth-of-type(2n) {
-  margin-right: 0;
-}
-
-.image.main.half:nth-of-type(2n+1) {
-  clear: left;
-}
-.image.main.half {
-  display: inline-flex;
-  align-items: flex-end;
-}
-.image.main.half img {
-  height: 30vw;      
-  width: 100%;         
-  object-fit: cover;   
+/* Images inside the flex row */
+.image-row img {
+  height: 300px;          /* same height for all images in row */
+  width: auto;            /* width adjusts automatically to maintain ratio */
+  object-fit: cover;      /* crop overflow if needed */
+  display: block;         /* remove inline spacing issues */
 }
 
 			@media screen and (max-width: 736px) {
@@ -2391,6 +2382,16 @@ input, select, textarea {
 				.image.main {
 					margin: 0 0 2em 0;
 				}
+				.image-row {
+    flex-direction: column; /* stack images vertically */
+  }
+
+  .image-row img {
+    height: auto;           /* natural height on mobile */
+    width: 100%;            /* fill container width */
+    object-fit: contain;    /* no cropping on mobile */
+  }
+}
 
 			}
 
