@@ -1,17 +1,18 @@
 @media screen and (max-width: 736px) {
-  html body.landing div#main div.inner section.tiles {
+  body.landing #main .inner .tiles {
     display: grid !important;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
     gap: 1.5rem !important;
   }
 
-  html body.landing div#main div.inner section.tiles article {
-    display: block !important; /* ensure articles stay in grid cells */
+  body.landing #main .inner .tiles article {
+    display: block !important;
+    float: none !important;
+    width: auto !important;
     margin: 0 !important;
   }
 
-  /* Optional: make images fit nicely */
-  html body.landing div#main div.inner section.tiles article .image img {
+  body.landing #main .inner .tiles article .image img {
     width: 100% !important;
     height: auto !important;
   }
