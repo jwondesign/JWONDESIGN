@@ -230,13 +230,14 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 <script>
-  // Force landing page tiles to desktop grid on mobile
+  // Force landing page tiles to keep 3 columns (desktop style) even on mobile
   window.addEventListener('load', function() {
     if(document.body.classList.contains('landing')) {
       var tiles = document.querySelector('#main .inner .tiles');
       if(tiles) {
+        // Always 3 columns
         tiles.style.display = 'grid';
-        tiles.style.gridTemplateColumns = 'repeat(auto-fit, minmax(250px, 1fr))';
+        tiles.style.gridTemplateColumns = 'repeat(3, 1fr)';
         tiles.style.gap = '1.5rem';
 
         // Reset articles inside tiles
