@@ -2,13 +2,13 @@
   body.landing #main .inner .tiles {
     display: flex !important;
     flex-wrap: wrap !important;
-    margin-left: -2.5em; /* same as desktop layout */
-    margin-top: 0 !important;
+    margin-left: 0 !important; /* remove -2.5em so tiles fit mobile */
+    margin-right: 0 !important;
   }
 
   body.landing #main .inner .tiles article {
-    flex: 1 1 calc(33.333% - 2.5em) !important; /* 3 per row like desktop */
-    margin: 0 0 2.5em 2.5em !important; /* match desktop spacing */
+    flex: 1 1 33.333% !important; /* exactly 3 per row */
+    margin: 0 !important; /* remove extra spacing */
     display: block !important;
   }
 
