@@ -1,15 +1,4 @@
-body.landing #main .inner .tiles {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  margin: -2.5em 0 0 -2.5em !important; /* identical to desktop */
-}
-
-body.landing #main .inner .tiles article {
-  flex: 1 1 calc(33.333% - 2.5em) !important; /* always 3 tiles per row */
-  margin: 2.5em 0 0 2.5em !important;         /* same spacing as desktop */
-}
-
-body.landing #main .inner .tiles article .image img {
-  width: 100% !important;
-  height: auto !important;
+body.landing .tiles article {
+  width: calc(33.333% - 2.5em) !important;
+  margin: 2.5em 0 0 2.5em !important;
 }
