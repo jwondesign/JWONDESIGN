@@ -1,14 +1,19 @@
 @media screen and (max-width: 736px) {
+  body.landing #main .inner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
   body.landing #main .inner .tiles {
     display: flex !important;
     flex-wrap: wrap !important;
-    margin-left: 0 !important; /* remove -2.5em so tiles fit mobile */
-    margin-right: 0 !important;
+    margin: 0 !important;
+    gap: 0.5em; /* small spacing between tiles */
   }
 
   body.landing #main .inner .tiles article {
-    flex: 1 1 33.333% !important; /* exactly 3 per row */
-    margin: 0 !important; /* remove extra spacing */
+    flex: 1 1 calc(33.333% - 0.5em) !important; /* 3 per row accounting for gap */
+    margin: 0 !important;
     display: block !important;
   }
 
