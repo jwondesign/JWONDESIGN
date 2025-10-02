@@ -229,28 +229,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-<script>
-  // Force landing page tiles to keep 3 columns (desktop style) even on mobile
-  window.addEventListener('load', function() {
-    if(document.body.classList.contains('landing')) {
-      var tiles = document.querySelector('#main .inner .tiles');
-      if(tiles) {
-        // Always 3 columns
-        tiles.style.display = 'grid';
-        tiles.style.gridTemplateColumns = 'repeat(3, 1fr)';
-        tiles.style.gap = '1.5rem';
 
-        // Reset articles inside tiles
-        var articles = tiles.querySelectorAll('article');
-        articles.forEach(function(a){
-          a.style.display = 'block';
-          a.style.float = 'none';
-          a.style.width = 'auto';
-          a.style.margin = '0';
-        });
-      }
-    }
-  });
-</script>
 	</body>
 </html>
