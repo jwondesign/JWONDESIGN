@@ -1,3 +1,4 @@
+/* ===== Force desktop layout on all screens ===== */
 body.landing .tiles {
   display: flex !important;
   flex-wrap: wrap !important;
@@ -5,6 +6,15 @@ body.landing .tiles {
 }
 
 body.landing .tiles article {
-  width: calc(33.333% - 2.5em) !important;
+  flex: 0 0 calc(33.333% - 2.5em) !important;
   margin: 2.5em 0 0 2.5em !important;
+  position: relative !important;
+}
+
+body.landing .tiles article a {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
 }
