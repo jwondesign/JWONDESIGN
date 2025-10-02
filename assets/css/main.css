@@ -3370,3 +3370,14 @@ body:not(.landing) #header .logo .symbol img {
 .features article {
   flex: 1 1 calc(33.333% - 2em); /* three per row */
 }
+@media screen and (max-width: 736px) {
+  body.landing .tiles {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+
+  body.landing .tiles article {
+    margin: 0 !important;  /* remove stacked spacing */
+  }
+}
