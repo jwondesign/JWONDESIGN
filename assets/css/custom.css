@@ -1,24 +1,15 @@
-@media screen and (max-width: 736px) {
-  body.landing #main .inner {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+body.landing #main .inner .tiles {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  margin: -2.5em 0 0 -2.5em !important; /* identical to desktop */
+}
 
-  body.landing #main .inner .tiles {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    margin: 0 !important;
-    gap: 0.5em; /* small spacing between tiles */
-  }
+body.landing #main .inner .tiles article {
+  flex: 1 1 calc(33.333% - 2.5em) !important; /* always 3 tiles per row */
+  margin: 2.5em 0 0 2.5em !important;         /* same spacing as desktop */
+}
 
-  body.landing #main .inner .tiles article {
-    flex: 1 1 calc(33.333% - 0.5em) !important; /* 3 per row accounting for gap */
-    margin: 0 !important;
-    display: block !important;
-  }
-
-  body.landing #main .inner .tiles article .image img {
-    width: 100% !important;
-    height: auto !important;
-  }
+body.landing #main .inner .tiles article .image img {
+  width: 100% !important;
+  height: auto !important;
 }
