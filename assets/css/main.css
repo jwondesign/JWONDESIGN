@@ -3355,7 +3355,7 @@ body:not(.landing) #header .logo .symbol img {
 }
 .image-row {
     display: flex;
-    gap: 1rem;      /* 이미지 사이 간격 */
+    gap: 0.5rem;      /* 이미지 사이 간격 */
     flex-wrap: wrap; /* 화면 좁아지면 자동 줄 바꿈 */
     justify-content: center; /* 가운데 정렬 */
 }
