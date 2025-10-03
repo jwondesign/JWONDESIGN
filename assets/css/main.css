@@ -3341,7 +3341,7 @@ body:not(.landing) #header .logo .symbol img {
 /* 이미지 행 설정 */
 .image-row {
     display: flex;
-    gap: 0.5rem;      /* 이미지 사이 간격 */
+    gap: 1rem;      /* 이미지 사이 간격 */
     flex-wrap: wrap;   /* 화면 좁아지면 줄 바꿈 */
     justify-content: center;
 }
