@@ -39,35 +39,38 @@ body.landing .tiles article .image img {
     object-fit: cover;
 }
 
-/* --- 박스 안 글자 크기 고정 (모니터 레이아웃 그대로) --- */
+/* --- 박스 안 글자 반응형 --- */
 body.landing .tiles article h2 {
-    font-size: 1.2rem; 
+    font-size: clamp(1rem, 2vw, 1.2rem);
     margin: 0.5em 0 0.3em 0;
 }
 
 body.landing .tiles article p {
-    font-size: 1rem;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
     margin: 0;
     white-space: normal;
     word-wrap: break-word;
 }
 
-/* --- 랜딩페이지 로고 고정 --- */
+/* --- 랜딩페이지 로고 --- */
 body.landing .logo .symbol img {
-    width: 150px;       /* 모니터 기준 크기 고정 */
+    width: auto;
+    max-width: 150px;  /* 모니터 기준 최대 크기 */
     height: auto;
-    max-width: none;    /* 화면 비율에 따라 줄어드는 것 방지 */
 }
 
-/* --- 랜딩페이지 헤드라인 고정 --- */
+/* --- 랜딩페이지 헤드라인 --- */
 body.landing header h1 {
-    font-size: 2.5rem;  /* 모니터 기준 글자 크기 */
-    line-height: 1.2;   
-    white-space: nowrap; /* 줄바꿈 방지 */
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* 화면 비율에 따라 자동 조정 */
+    line-height: 1.2;
+    white-space: normal;  /* 줄바꿈 허용 */
+    text-align: center;
+    margin-bottom: 0.5em;
 }
 
-/* --- 랜딩페이지 해드라인 문단 --- */
+/* --- 랜딩페이지 헤드라인 문단 --- */
 body.landing header p {
-    font-size: 1rem;
+    font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.4;
+    text-align: center;
 }
