@@ -3357,7 +3357,6 @@ body:not(.landing) #header .logo .symbol img {
 /* 이미지 */
 .image-row .image.main img {
     width: 100%;
-    aspect-ratio: 4/3;      /* 고정 비율 */
     object-fit: cover;       /* 이미지 잘림 방지 */
     display: block;
     border-radius: 6px;
