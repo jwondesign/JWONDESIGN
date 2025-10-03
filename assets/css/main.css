@@ -3312,53 +3312,83 @@ input, select, textarea {
 		}
 
 /* Wrapper */
+#wrapper > * > .inner {
+    width: 100%;
+    max-width: 68em;
+    margin: 0 auto;
+    padding: 0 2.5em;
+}
 
-	#wrapper > * > .inner {
-		width: 100%;
-		max-width: 68em;
-		margin: 0 auto;
-		padding: 0 2.5em;
-	}
+@media screen and (max-width: 736px) {
+    #wrapper > * > .inner {
+        padding: 0 1.25em;
+    }
+}
 
-		@media screen and (max-width: 736px) {
-
-			#wrapper > * > .inner {
-				padding: 0 1.25em;
-			}
-
-		}
-/* Make logo smaller on inside pages only */
+/* Logo */
 body:not(.landing) #header .logo .symbol img {
-	width: 250px !important;   
-	height: auto !important;
-}	
-/* 모바일 화면용 로고 크기 조정 (landing 페이지 포함) */
+    width: 250px !important;
+    height: auto !important;
+}
+
 @media (max-width: 768px) {
     body.landing #header .logo .symbol img {
-        width: 300px !important;  /* 300px → 더 작은 값으로 조정 */
+        width: 300px !important;
         height: auto !important;
     }
 }
+
+/* 이미지 행 설정 */
+.image-row {
+    display: flex;
+    gap: 0.5rem;      /* 이미지 사이 간격 */
+    flex-wrap: wrap;   /* 화면 좁아지면 줄 바꿈 */
+    justify-content: center;
+}
+
+.image-row .image.main {
+    flex: 1 1 48%;     /* 최소 48%로 한 줄에 2개 */
+    box-sizing: border-box;
+}
+
+.image-row .image.main img {
+    width: 100%;
+    aspect-ratio: 4/3; /* 가로:세로 비율 유지 */
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* 단일 이미지 (줄에 하나) */
+.image.main:not(.image-row img) {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+}
+
+/* 동영상 비율 설정 */
 .video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 비율 */
-  margin: 2em 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    height: 0;
+    margin: 2em 0;
+    overflow: hidden;
 }
 
 .video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 화면 가득 채우되 비율 유지 */
-}
-.video-container.landscape {
-  padding-top: 56.25%; /* 16:9 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 화면 꽉 채우기 */
 }
 
-.video-container.portrait {
-  padding-top: 177.78%; /* 9:16 */
+/* 모바일에서 세로형 비디오 꽉차게 */
+@media screen and (max-width: 736px) {
+    .video-container {
+        padding-bottom: 100%; /* 세로형일 때 높이 100% */
+    }
 }
