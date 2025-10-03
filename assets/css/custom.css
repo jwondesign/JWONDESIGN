@@ -1,20 +1,46 @@
-/* ===== Force desktop layout on all screens ===== */
+/* ===== Landing page: Force 3 boxes per row on all screens ===== */
 body.landing .tiles {
   display: flex !important;
   flex-wrap: wrap !important;
-  margin: -2.5em 0 0 -2.5em !important;
+  gap: 20px;              /* 박스 사이 간격 */
+  margin: 0;               /* 기존 margin 제거 */
+  padding: 0;
 }
 
+/* 각 박스 폭: 3개씩 */
 body.landing .tiles article {
-  flex: 0 0 calc(33.333% - 2.5em) !important;
-  margin: 2.5em 0 0 2.5em !important;
-  position: relative !important;
+  flex: 0 0 calc(33.333% - 20px) !important; /* 한 줄 3칸 */
+  box-sizing: border-box;
+  margin: 0;              /* 기존 margin 제거 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/* 이미지 비율 유지 */
+body.landing .tiles article .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 글자 깨짐 방지 */
+body.landing .tiles article h2,
+body.landing .tiles article p {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* 링크 전체 박스 클릭 가능 */
 body.landing .tiles article a {
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  text-align: center !important;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
 }
