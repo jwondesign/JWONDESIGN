@@ -3335,7 +3335,7 @@ body:not(.landing) #header .logo .symbol img {
 /* 모바일 화면용 로고 크기 조정 (landing 페이지 포함) */
 @media (max-width: 768px) {
     body.landing #header .logo .symbol img {
-        width: 360px !important; /* !important로 기존 스타일 덮어쓰기 */
+        width: 300px !important; /* !important로 기존 스타일 덮어쓰기 */
         height: auto !important;
     }
 }
