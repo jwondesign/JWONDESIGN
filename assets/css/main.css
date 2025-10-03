@@ -3331,36 +3331,11 @@ input, select, textarea {
 body:not(.landing) #header .logo .symbol img {
 	width: 250px !important;   
 	height: auto !important;
-}	
-/* 모바일 화면용 로고 크기 조정 (landing 페이지 포함) */
-@media (max-width: 768px) {
-    body.landing #header .logo .symbol img {
-        width: 300px !important; /* !important로 기존 스타일 덮어쓰기 */
-        height: auto !important;
-    }
-}
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 비율 */
-    padding-top: 25px;
-    height: 0;
-}
-
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
+}		
+.image-row .image.main img {
     width: 100%;
-    height: 100%;
-}
-.image-row {
-    display: flex;
-    gap: 1rem;      /* 이미지 사이 간격 */
-    flex-wrap: wrap; /* 화면 좁아지면 자동 줄 바꿈 */
-    justify-content: center; /* 가운데 정렬 */
-}
-
-.image-row .image.main {
-    flex: 1 1 48%;  /* 최소 48%, 2장씩 배치 */
-    box-sizing: border-box;
+    height: 500px;      /* 원하는 고정 높이 */
+    object-fit: cover;  /* 이미지 잘라서 박스에 맞춤 */
+    display: block;
+    border-radius: 8px; /* 선택 사항, 모서리 둥글게 */
 }
