@@ -1,9 +1,16 @@
+/* ==============================
+   Landing Page Custom CSS
+   Author: You
+   ============================== */
+
+/* --- 랜딩페이지 전체 박스 --- */
 body.landing .tiles {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 20px;        
     margin: 0;
     padding: 0;
+    justify-content: center; /* 박스 가운데 정렬 */
 }
 
 /* --- 각 박스 설정 --- */
@@ -52,23 +59,30 @@ body.landing .tiles article p {
     word-wrap: break-word;
 }
 
-/* --- 랜딩페이지 로고 --- */
+/* --- 로고 중앙 정렬 --- */
+body.landing header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em; /* 로고와 헤드라인 간격 */
+}
+
 body.landing .logo .symbol img {
     width: auto;
-    max-width: 150px;  /* 모니터 기준 최대 크기 */
+    max-width: 120px;  /* 모니터 기준보다 조금 작게 */
     height: auto;
 }
 
-/* --- 랜딩페이지 헤드라인 --- */
+/* --- 헤드라인 글자 --- */
 body.landing header h1 {
-    font-size: clamp(1.8rem, 4vw, 2.5rem); /* 화면 비율에 따라 자동 조정 */
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem); /* 조금 작게 */
     line-height: 1.2;
     white-space: normal;  /* 줄바꿈 허용 */
     text-align: center;
     margin-bottom: 0.5em;
 }
 
-/* --- 랜딩페이지 헤드라인 문단 --- */
+/* --- 헤드라인 문단 --- */
 body.landing header p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.4;
