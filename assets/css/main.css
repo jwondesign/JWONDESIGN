@@ -3353,3 +3353,14 @@ body:not(.landing) #header .logo .symbol img {
     width: 100%;
     height: 100%;
 }
+.image-row {
+    display: flex;
+    gap: 1rem;      /* 이미지 사이 간격 */
+    flex-wrap: wrap; /* 화면 좁아지면 자동 줄 바꿈 */
+    justify-content: center; /* 가운데 정렬 */
+}
+
+.image-row .image.main {
+    flex: 1 1 48%;  /* 최소 48%, 2장씩 배치 */
+    box-sizing: border-box;
+}
