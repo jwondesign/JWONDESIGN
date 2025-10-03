@@ -3331,65 +3331,43 @@ input, select, textarea {
 body:not(.landing) #header .logo .symbol img {
 	width: 250px !important;   
 	height: auto !important;
-}		
-.image-row {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;  /* 높이를 맞춤 */
-}
-
-.image-row .image.main {
-    flex: 1 1 48%;
-    display: flex;           /* 내부 img를 stretch 시키기 위해 */
-}
-
-.image-row .image.main img {
-    width: 100%;
-    height: 250px;      /* 원하는 고정 높이 */
-    object-fit: cover;  /* 잘리더라도 비율 유지 */
-    display: block;
-    border-radius: 6px; /* 선택사항 */
-}
-
-/* ===============================
-   로고 크기 조정 (갤러리 영향 X)
-   =============================== */
-
-/* PC 로고 (landing 제외) */
-body:not(.landing) #header .logo .symbol img {
-    width: 250px !important;
-    height: auto !important;
 }	
-
-/* 모바일 로고 (landing 페이지 포함) */
+/* 모바일 화면용 로고 크기 조정 (landing 페이지 포함) */
 @media (max-width: 768px) {
     body.landing #header .logo .symbol img {
-        width: 300px !important;  /* 300px → 더 작은 값으로 조정 */
+        width: 300px !important; /* !important로 기존 스타일 덮어쓰기 */
         height: auto !important;
     }
 }
 .video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 비율 */
-  margin: 2em 0;
-  overflow: hidden;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 비율 */
+    padding-top: 25px;
+    height: 0;
 }
 
 .video-container video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* 화면 가득 채우되 비율 유지 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-.video-container.landscape {
-  padding-top: 56.25%; /* 16:9 */
+.image-row {
+    display: flex;
+    gap: 1rem;      /* 이미지 사이 간격 */
+    flex-wrap: wrap; /* 화면 좁아지면 자동 줄 바꿈 */
+    justify-content: center; /* 가운데 정렬 */
 }
 
-.video-container.portrait {
-  padding-top: 177.78%; /* 9:16 */
+.image-row .image.main {
+    flex: 1 1 48%;  /* 최소 48%, 2장씩 배치 */
+    box-sizing: border-box;
+}
+.image-row .image.main img {
+    width: 100%;
+    aspect-ratio: 4/3;   /* 가로:세로 비율 설정 */
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
 }
