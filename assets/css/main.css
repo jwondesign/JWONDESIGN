@@ -3312,99 +3312,84 @@ input, select, textarea {
 		}
 
 /* Wrapper */
-#wrapper > * > .inner {
+
+	#wrapper > * > .inner {
+		width: 100%;
+		max-width: 68em;
+		margin: 0 auto;
+		padding: 0 2.5em;
+	}
+
+		@media screen and (max-width: 736px) {
+
+			#wrapper > * > .inner {
+				padding: 0 1.25em;
+			}
+
+		}
+/* Make logo smaller on inside pages only */
+body:not(.landing) #header .logo .symbol img {
+	width: 250px !important;   
+	height: auto !important;
+}		
+.image-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;  /* 높이를 맞춤 */
+}
+
+.image-row .image.main {
+    flex: 1 1 48%;
+    display: flex;           /* 내부 img를 stretch 시키기 위해 */
+}
+
+.image-row .image.main img {
     width: 100%;
-    max-width: 68em;
-    margin: 0 auto;
-    padding: 0 2.5em;
+    height: 250px;      /* 원하는 고정 높이 */
+    object-fit: cover;  /* 잘리더라도 비율 유지 */
+    display: block;
+    border-radius: 6px; /* 선택사항 */
 }
 
-@media screen and (max-width: 736px) {
-    #wrapper > * > .inner {
-        padding: 0 1.25em;
-    }
-}
+/* ===============================
+   로고 크기 조정 (갤러리 영향 X)
+   =============================== */
 
-/* Logo */
+/* PC 로고 (landing 제외) */
 body:not(.landing) #header .logo .symbol img {
     width: 250px !important;
     height: auto !important;
-}
+}	
 
+/* 모바일 로고 (landing 페이지 포함) */
 @media (max-width: 768px) {
     body.landing #header .logo .symbol img {
-        width: 300px !important;
+        width: 300px !important;  /* 300px → 더 작은 값으로 조정 */
         height: auto !important;
     }
 }
-
-/* 이미지 행 설정 */
-.image-row {
-    display: flex;
-    gap: 0.5rem;           /* 가로 간격 */
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 0.5rem; /* row 간 세로 간격 */
-}
-
-/* 이미지 컨테이너 */
-.image-row .image.main {
-    flex: 1 1 48%;         /* 한 줄에 두 개 */
-    box-sizing: border-box;
-    display: flex;          /* 내부 이미지 stretch */
-}
-
-/* 이미지 */
-.image-row .image.main img {
-    width: 100%;
-    object-fit: cover;       /* 이미지 잘림 방지 */
-    display: block;
-    border-radius: 6px;
-}
-
-/* 단독 이미지 (한 줄 한 장) */
-span.image.main:not(.image-row .image.main) img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    object-fit: cover;
-    display: block;
-    border-radius: 6px;
-    margin-bottom: 0.5rem;  /* 단독 이미지와 row 사이 간격 */
-}
-
-/* 반응형 비디오 */
 .video-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 비율 기본 */
-    margin-bottom: 0.5rem;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 비율 */
+  margin: 2em 0;
+  overflow: hidden;
 }
 
 .video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 화면 가득 채우되 비율 유지 */
+}
+.video-container.landscape {
+  padding-top: 56.25%; /* 16:9 */
 }
 
-/* 모바일: 세로형 비디오가 꽉 차게 */
-@media screen and (max-width: 736px) {
-    .video-container {
-        padding-top: 100%; /* 1:1 비율, 세로형 느낌 */
-    }
-}
-.image-row .image.main {
-    flex: 1 1 auto;  /* 기존 48% 대신 auto */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-row .image.main img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+.video-container.portrait {
+  padding-top: 177.78%; /* 9:16 */
 }
