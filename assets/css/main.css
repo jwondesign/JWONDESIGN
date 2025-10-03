@@ -2311,14 +2311,14 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		border-radius: 2px;
+		border-radius: 4px;
 		border: 0;
 		display: inline-block;
 		position: relative;
 	}
 
 		.image img {
-			border-radius: 2px;
+			border-radius: 4px;
 			display: block;
 		}
 
@@ -2354,42 +2354,21 @@ input, select, textarea {
 
 		.image.main {
 			display: block;
-			margin: 0 0 1.5em 0;
+			margin: 0 0 3em 0;
 			width: 100%;
 		}
 
 			.image.main img {
 				width: 100%;
 			}
-			
-			.image-row {
-  display: flex;
-  align-items: stretch;      /* equal height */
-  margin-bottom: 0em;      /* vertical spacing */
-  gap: 1em;                  /* fixed horizontal gap between images */
-}
-
-.image-row img {
-  height: 500px;             /* all images same height */
-  width: auto;               /* width scales proportionally */
-  object-fit: cover;         /* crop if necessary */
-  display: block;
-}
 
 			@media screen and (max-width: 736px) {
-  .image-row {
-    flex-direction: column; /* stack vertically */
-  }
 
-  .image-row img {
-    width: 100%;            /* fill container */
-    height: auto;           /* natural height */
-    object-fit: contain;    /* no cropping */
-  }
-}
+				.image.main {
+					margin: 0 0 2em 0;
+				}
 
-
-		
+			}
 
 /* Table */
 
@@ -3353,31 +3332,3 @@ body:not(.landing) #header .logo .symbol img {
 	width: 250px !important;   
 	height: auto !important;
 }		
-.video-container video {
-  width: 100%;          /* full width like your images */
-  height: auto;         /* maintains aspect ratio */
-  display: block;
-  border-radius: 2px;   /* same as images */
-  object-fit: cover;    /* crop if needed */
-  margin-bottom: 1.5em; /* same vertical gap as images */
-}
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-}
-
-.features article {
-  flex: 1 1 calc(33.333% - 2em); /* three per row */
-}
-@media screen and (max-width: 736px) {
-  body.landing .tiles {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
-    gap: 1.5rem !important;
-  }
-
-  body.landing .tiles article {
-    margin: 0 !important;  /* remove stacked spacing */
-  }
-}
