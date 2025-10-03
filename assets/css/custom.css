@@ -112,3 +112,9 @@ body.landing header p {
         gap: 10px !important;
     }
 }
+@media screen and (max-width: 768px) {
+    body.landing .logo .symbol img {
+        max-width: 50% !important; /* 절반 크기 */
+        height: auto !important;   /* 비율 유지 */
+    }
+}
