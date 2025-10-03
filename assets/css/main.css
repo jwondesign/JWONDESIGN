@@ -3386,3 +3386,10 @@ body:not(.landing) #header .logo .symbol img {
   height: 100%;
   object-fit: cover; /* 화면 가득 채우되 비율 유지 */
 }
+.video-container.landscape {
+  padding-top: 56.25%; /* 16:9 */
+}
+
+.video-container.portrait {
+  padding-top: 177.78%; /* 9:16 */
+}
