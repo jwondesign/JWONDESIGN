@@ -1,9 +1,3 @@
-/* ==============================
-   Landing Page Custom CSS
-   Author: You
-   ============================== */
-
-/* --- 랜딩페이지 전체 박스 --- */
 body.landing .tiles {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -87,4 +81,44 @@ body.landing header p {
     font-size: clamp(1rem, 2vw, 1.2rem);
     line-height: 1.4;
     text-align: center;
+}
+
+/* ==============================
+   모바일 안정화 미디어쿼리
+   320px~480px 화면 최적화
+   ============================== */
+@media screen and (max-width: 480px) {
+
+    /* 박스 폭 조정: 한 줄 3개 유지, 작은 화면에서는 폭 줄임 */
+    body.landing .tiles article {
+        flex: 0 0 calc(33.333% - 10px) !important;
+    }
+
+    /* 박스 글자 조금 더 작게 */
+    body.landing .tiles article h2 {
+        font-size: 1rem;
+    }
+
+    body.landing .tiles article p {
+        font-size: 0.9rem;
+    }
+
+    /* 로고 조금 줄임 */
+    body.landing .logo .symbol img {
+        max-width: 100px;
+    }
+
+    /* 헤드라인 글자 조금 더 줄임 */
+    body.landing header h1 {
+        font-size: 1.8rem;
+    }
+
+    body.landing header p {
+        font-size: 1rem;
+    }
+
+    /* 랜딩페이지 박스 간격 줄임 */
+    body.landing .tiles {
+        gap: 10px;
+    }
 }
