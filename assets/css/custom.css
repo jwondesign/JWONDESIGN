@@ -65,7 +65,6 @@ body.landing .logo .symbol img {
 body.landing header h1,
 body.landing header p {
     line-height: inherit !important;
-    text-align: center !important;
     white-space: normal !important;
     margin-bottom: 0.5em !important;
 }
