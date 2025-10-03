@@ -1,46 +1,61 @@
-/* ===== Landing page: Force 3 boxes per row on all screens ===== */
+/* --- 랜딩페이지: 항상 한 줄 3박스 --- */
 body.landing .tiles {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 20px;              /* 박스 사이 간격 */
-  margin: 0;               /* 기존 margin 제거 */
-  padding: 0;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 20px;        /* 박스 사이 간격 */
+    margin: 0;         /* 기존 margin 제거 */
+    padding: 0;
 }
 
-/* 각 박스 폭: 3개씩 */
+/* --- 각 박스 설정 --- */
 body.landing .tiles article {
-  flex: 0 0 calc(33.333% - 20px) !important; /* 한 줄 3칸 */
-  box-sizing: border-box;
-  margin: 0;              /* 기존 margin 제거 */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    flex: 0 0 calc(33.333% - 20px) !important; /* 한 줄 3박스 */
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;   /* 제목과 글자는 박스 아래쪽 정렬 */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;            /* 내용이 튀어나오는 것 방지 */
 }
 
-/* 이미지 비율 유지 */
-body.landing .tiles article .image img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* 글자 깨짐 방지 */
-body.landing .tiles article h2,
-body.landing .tiles article p {
-  white-space: normal;
-  word-wrap: break-word;
-}
-
-/* 링크 전체 박스 클릭 가능 */
+/* --- 박스 안 링크 전체 클릭 가능 --- */
 body.landing .tiles article a {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- 박스 이미지 비율 유지 --- */
+body.landing .tiles article .image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;  /* 비율 유지하며 잘림 방지 */
+}
+
+/* --- 박스 안 글자 반응형 --- */
+body.landing .tiles article h2 {
+    font-size: calc(1rem + 1vw); /* 화면 크기에 맞춰 글자 크기 조절 */
+    margin: 0.5em 0 0.3em 0;
+}
+
+body.landing .tiles article p {
+    font-size: calc(0.8rem + 0.5vw);
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* --- 로고 반응형 --- */
+body.landing .logo .symbol img {
+    max-width: 150px; /* 너무 커지지 않도록 제한 */
+    width: 20vw;      /* 화면 너비 비율로 조정 */
+    height: auto;
 }
