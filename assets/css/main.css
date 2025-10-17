@@ -3346,11 +3346,18 @@ body:not(.landing) #header .logo .symbol img {
 }
 
 .image-row .image.main img {
-    width: 100%;
-    height: 500px;      /* 원하는 고정 높이 */
-    object-fit: cover;  /* 잘리더라도 비율 유지 */
+     width: 100%;
+    height: 500px;        
+    max-height: 500px;   
+    object-fit: cover;   
     display: block;
-    border-radius: 6px; /* 선택사항 */
+    border-radius: 6px;
+}
+@media (max-width: 768px) {
+    .image-row .image.main img {
+        height: auto;      /* auto on mobile to prevent cropping */
+        object-fit: contain; /* prevent cutting */
+    }
 }
 
 /* ===============================
