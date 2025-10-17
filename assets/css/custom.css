@@ -75,15 +75,15 @@ body.landing header p {
    ============================== */
 .image-row {
     display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
+    flex-wrap: nowrap !important; /* keep images on the same row */
+    gap: 10px !important;         /* spacing between images */
     justify-content: flex-start !important;
     align-items: stretch !important;
-    height: 500px !important;
+    height: 500px !important;     /* keep fixed row height */
 }
 
 .image-row .image {
-    flex: 1 1 auto !important;
+    flex: 0 0 auto !important;    /* size based on image aspect ratio */
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
@@ -91,8 +91,8 @@ body.landing header p {
 }
 
 .image-row .image img {
-    height: 100% !important;
-    width: auto !important;
+    height: 100% !important;      /* maintain row height */
+    width: auto !important;       /* preserve original ratio */
     object-fit: contain !important;
     display: block !important;
     border-radius: 6px !important;
