@@ -3378,17 +3378,29 @@ body:not(.landing) #header .logo .symbol img {
     }
 }
 .video-container {
-  position: relative;
-  width: 100%;
-  margin: 2em 0;
-  overflow: hidden;
-  padding-top: 0; /* remove fixed ratio */
-  height: auto;
+    position: relative;
+    width: 100%;
+    margin: 2em 0;
+    overflow: hidden;
+    height: auto;           /* height adjusts automatically */
 }
 
 .video-container video {
-  position: relative;
-  width: 100%;
-  height: auto;       /* maintain original video shape */
-  object-fit: contain; /* prevents cropping */
+    width: 100%;            /* fill container width */
+    height: auto;           /* maintain original aspect ratio */
+    display: block;
+    object-fit: contain;    /* prevent cropping */
+    border-radius: 6px;     /* optional: rounded corners */
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .video-container {
+        margin: 1.5em 0;
+    }
+
+    .video-container video {
+        width: 100%;
+        height: auto;
+    }
 }
