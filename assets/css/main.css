@@ -3336,22 +3336,25 @@ body:not(.landing) #header .logo .symbol img {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;  /* 높이를 맞춤 */
+    justify-content: flex-start; /* images will take natural widths */
+    align-items: stretch;        /* all images fill row height */
+    height: 500px;               /* fixed row height */
 }
 
 .image-row .image.main {
-    flex: 1 1 48%;
-    display: flex;           /* 내부 img를 stretch 시키기 위해 */
+    flex: 1 1 auto;              /* width adjusts based on image aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;                /* fill row height */
 }
 
 .image-row .image.main img {
-     width: 100%;
-    height: 500px;        
-    max-height: 500px;   
-    object-fit: cover;   
+    height: 100%;                /* fill container height */
+    width: auto;                 /* maintain aspect ratio */
+    object-fit: contain;         /* prevents cropping */
     display: block;
-    border-radius: 6px;
+    border-radius: 6px;          /* optional */
 }
 @media (max-width: 768px) {
     .image-row .image.main img {
