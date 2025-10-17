@@ -74,28 +74,28 @@ body.landing header p {
    Two-image rows on projects
    ============================== */
 .image-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: flex-start; /* allow widths to adjust naturally */
-    align-items: stretch;        /* images fill row height */
-    height: 500px;               /* fixed row height */
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+    height: 500px !important;
 }
 
 .image-row .image {
-    flex: 1 1 auto;              /* width adjusts based on image aspect ratio */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;                /* fill row height */
+    flex: 1 1 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
 }
 
 .image-row .image img {
-    height: 100%;                /* fill container height */
-    width: auto;                 /* maintain aspect ratio */
-    object-fit: contain;         /* no cropping */
-    display: block;
-    border-radius: 6px;          /* optional */
+    height: 100% !important;
+    width: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    border-radius: 6px !important;
 }
 
 /* ==============================
