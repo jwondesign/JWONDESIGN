@@ -77,20 +77,25 @@ body.landing header p {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
-    margin-bottom: 1em;
+    justify-content: flex-start; /* allow widths to adjust naturally */
+    align-items: stretch;        /* images fill row height */
+    height: 500px;               /* fixed row height */
 }
 
 .image-row .image {
-    flex: 1 1 calc(50% - 5px);
-    max-width: calc(50% - 5px);
+    flex: 1 1 auto;              /* width adjusts based on image aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;                /* fill row height */
 }
 
 .image-row .image img {
-    width: 100%;
-    height: auto;
+    height: 100%;                /* fill container height */
+    width: auto;                 /* maintain aspect ratio */
+    object-fit: contain;         /* no cropping */
     display: block;
-    object-fit: contain; /* prevents cropping of landscape images */
+    border-radius: 6px;          /* optional */
 }
 
 /* ==============================
