@@ -75,22 +75,26 @@ body.landing header p {
    ============================== */
 .image-row {
     display: flex !important;
-    gap: 10px !important;
+    flex-wrap: nowrap !important;       /* keep images on one row */
+    gap: 10px !important;               /* spacing between images */
     justify-content: flex-start !important;
-    align-items: stretch !important;
+    align-items: stretch !important;    /* row height is uniform */
     height: 500px !important;
 }
 
-.image-row .image {
-    display: block !important;      /* remove flex on container */
-    height: 100% !important;
+.image-row .image.main {
+    display: flex !important;           /* make span a flex container */
+    align-items: stretch !important;
+    justify-content: center !important;
+    height: 100% !important;            /* match row height */
+    flex: 0 0 auto !important;          /* container width based on img */
 }
 
-.image-row .image img {
-    height: 100% !important;        /* row height */
-    width: auto !important;         /* preserve ratio */
-    display: inline-block !important;
+.image-row .image.main img {
+    height: 100% !important;            /* maintain row height */
+    width: auto !important;             /* preserve aspect ratio */
     object-fit: contain !important;
+    display: block !important;
     border-radius: 6px !important;
 }
 
