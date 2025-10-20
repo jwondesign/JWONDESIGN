@@ -75,25 +75,27 @@ body.landing header p {
    ============================== */
 /* Two-image row container */
 .image-row {
-    display: flex;
-    gap: 1rem;             /* consistent gap between images */
+    display: flex;           
+    justify-content: center;  /* center row if total width < container */
+    align-items: flex-start;  /* top-align images */
+    gap: 16px;                /* must match JS gap */
 }
 
 /* Image container */
 .image-row .image.main {
-    flex: 1 1 0;           /* both containers share the row equally */
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    flex: 0 0 auto;           /* allow JS to set width dynamically */
 }
 
 /* Images themselves */
 .image-row .image.main img {
-    height: 300px;         /* uniform height for both images */
-    width: auto;           /* width adjusts to maintain aspect ratio */
+    height: auto;             /* JS will set height */
+    width: auto;              /* width adjusts to maintain aspect ratio */
     display: block;
-    object-fit: contain;   /* no cropping, whole image visible */
+    object-fit: contain;
     border-radius: 6px;
 }
 /* ==============================
