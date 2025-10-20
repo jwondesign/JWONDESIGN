@@ -73,29 +73,29 @@ body.landing header p {
 /* ==============================
    Two-image rows on projects
    ============================== */
+/* Two-image row container */
 .image-row {
     display: flex;
-    gap: 1rem; /* spacing between images */
+    gap: 1rem;             /* consistent gap between images */
 }
 
-/* Each image container */
+/* Image container */
 .image-row .image.main {
-    flex: 1; /* split row evenly */
-    display: flex;             /* center image inside container */
+    flex: 1 1 0;           /* both containers share the row equally */
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;          /* prevent overflow if image is very wide/tall */
+    overflow: hidden;
 }
 
-/* The actual image */
+/* Images themselves */
 .image-row .image.main img {
-    width: 100%;       /* fills container width */
-    height: auto;      /* maintain aspect ratio */
-    max-height: 500px; /* optional: uniform max height */
-    object-fit: contain;
+    height: 300px;         /* uniform height for both images */
+    width: auto;           /* width adjusts to maintain aspect ratio */
     display: block;
+    object-fit: contain;   /* no cropping, whole image visible */
+    border-radius: 6px;
 }
-
 /* ==============================
    Mobile adjustments (<=768px)
    ============================== */
