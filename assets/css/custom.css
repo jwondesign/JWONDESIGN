@@ -74,28 +74,26 @@ body.landing header p {
    Two-image rows on projects
    ============================== */
 .image-row {
-    display: flex !important;
-    flex-wrap: nowrap !important;      /* keep two images on one row */
-    gap: 10px !important;              /* spacing between images */
-    justify-content: flex-start !important; /* don't force centering */
-    align-items: stretch !important;   /* match row height */
-    height: 500px !important;          /* fixed row height */
+    display: flex;
+    gap: 1rem; /* spacing between images */
 }
 
+/* Each image container */
 .image-row .image.main {
-    display: flex !important;          /* make span a flex container */
-    align-items: stretch !important;   /* image fills container height */
-    justify-content: center !important;
-    flex: 0 0 auto !important;         /* container width based on image */
-    height: 100% !important;           /* match row height */
+    flex: 1; /* split row evenly */
+    display: flex;             /* center image inside container */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;          /* prevent overflow if image is very wide/tall */
 }
 
+/* The actual image */
 .image-row .image.main img {
-    height: 100% !important;           /* maintain row height */
-    width: auto !important;            /* preserve original ratio */
-    object-fit: contain !important;
-    display: block !important;
-    border-radius: 6px !important;
+    width: 100%;       /* fills container width */
+    height: auto;      /* maintain aspect ratio */
+    max-height: 500px; /* optional: uniform max height */
+    object-fit: contain;
+    display: block;
 }
 
 /* ==============================
