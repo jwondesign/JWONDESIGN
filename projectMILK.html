@@ -160,36 +160,6 @@
   });
 </script>
 
-<script>
-window.addEventListener('load', function() {
-  const gap = 16; // match the CSS gap in .image-row
-  document.querySelectorAll('.image-row').forEach(row => {
-    const containerWidth = row.clientWidth - gap;
-    const imgs = row.querySelectorAll('img');
-    if (imgs.length !== 2) return; // only process rows with 2 images
-
-    // natural dimensions
-    const w1 = imgs[0].naturalWidth;
-    const h1 = imgs[0].naturalHeight;
-    const w2 = imgs[1].naturalWidth;
-    const h2 = imgs[1].naturalHeight;
-
-    // aspect ratios
-    const ar1 = w1 / h1;
-    const ar2 = w2 / h2;
-
-    // row height so combined width + gap = container width
-    const rowHeight = containerWidth / (ar1 + ar2);
-
-    // apply height and proportional width
-    imgs[0].style.height = rowHeight + 'px';
-    imgs[0].style.width = (rowHeight * ar1) + 'px';
-    imgs[1].style.height = rowHeight + 'px';
-    imgs[1].style.width = (rowHeight * ar2) + 'px';
-  });
-});
-</script>
-
 
 	</body>
 </html>
