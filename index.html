@@ -436,45 +436,5 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const tiles = document.querySelectorAll(".tiles article");
-
-  let tappedTile = null;
-
-  tiles.forEach(tile => {
-    const link = tile.querySelector("a");
-
-    tile.addEventListener("touchstart", function (e) {
-      // Allow normal scroll if user is swiping
-      if (e.touches.length > 1) return;
-
-      // If tapping the same tile again → open the link
-      if (tappedTile === tile) {
-        window.location.href = link.getAttribute("href");
-        tappedTile = null;
-        return;
-      }
-
-      // First tap → show hover effect
-      e.preventDefault();
-      tiles.forEach(t => t.classList.remove("hover"));
-      tile.classList.add("hover");
-      tappedTile = tile;
-    });
-  });
-
-  // Tap outside to remove hover
-  document.addEventListener("touchstart", function (e) {
-    if (!e.target.closest(".tiles article")) {
-      tiles.forEach(t => t.classList.remove("hover"));
-      tappedTile = null;
-    }
-  });
-});
-</script>
-
-
-
 	</body>
 </html>
