@@ -440,49 +440,41 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tiles = document.querySelectorAll(".tiles article");
 
-  tiles.forEach(function (tile) {
+  let tappedTile = null;
+
+  tiles.forEach(tile => {
     const link = tile.querySelector("a");
 
-    tile.addEventListener("touchstart", function () {
-      tile.classList.add("hover");
-      // Wait a short moment so color reveal is visible
-      setTimeout(() => {
+    tile.addEventListener("touchstart", function (e) {
+      // Allow normal scroll if user is swiping
+      if (e.touches.length > 1) return;
+
+      // If tapping the same tile again → open the link
+      if (tappedTile === tile) {
         window.location.href = link.getAttribute("href");
-      }, 150);
+        tappedTile = null;
+        return;
+      }
+
+      // First tap → show hover effect
+      e.preventDefault();
+      tiles.forEach(t => t.classList.remove("hover"));
+      tile.classList.add("hover");
+      tappedTile = tile;
     });
+  });
+
+  // Tap outside to remove hover
+  document.addEventListener("touchstart", function (e) {
+    if (!e.target.closest(".tiles article")) {
+      tiles.forEach(t => t.classList.remove("hover"));
+      tappedTile = null;
+    }
   });
 });
 </script>
 
-<script>
-  // Enable tap-to-reveal hover effect on mobile
-  document.addEventListener("DOMContentLoaded", function () {
-    const tiles = document.querySelectorAll(".tiles article");
 
-    tiles.forEach(function (tile) {
-      // When user taps on a tile
-      tile.addEventListener("touchstart", function (e) {
-        // Prevent quick double taps from opening links instantly
-        
-
-        // Remove 'hover' from others (so only one stays active)
-        tiles.forEach(t => {
-          if (t !== tile) t.classList.remove("hover");
-        });
-
-        // Toggle hover state on this one
-        this.classList.toggle("hover");
-      });
-    });
-
-    // Optional: Tap outside to close all tiles
-    document.addEventListener("touchstart", function (e) {
-      if (!e.target.closest(".tiles article")) {
-        tiles.forEach(t => t.classList.remove("hover"));
-      }
-    });
-  });
-</script>
 
 	</body>
 </html>
