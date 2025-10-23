@@ -436,5 +436,35 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+<script>
+  // Enable tap-to-reveal hover effect on mobile
+  document.addEventListener("DOMContentLoaded", function () {
+    const tiles = document.querySelectorAll(".tiles article");
+
+    tiles.forEach(function (tile) {
+      // When user taps on a tile
+      tile.addEventListener("touchstart", function (e) {
+        // Prevent quick double taps from opening links instantly
+        e.preventDefault();
+
+        // Remove 'hover' from others (so only one stays active)
+        tiles.forEach(t => {
+          if (t !== tile) t.classList.remove("hover");
+        });
+
+        // Toggle hover state on this one
+        this.classList.toggle("hover");
+      });
+    });
+
+    // Optional: Tap outside to close all tiles
+    document.addEventListener("touchstart", function (e) {
+      if (!e.target.closest(".tiles article")) {
+        tiles.forEach(t => t.classList.remove("hover"));
+      }
+    });
+  });
+</script>
+
 	</body>
 </html>
