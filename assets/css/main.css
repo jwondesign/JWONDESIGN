@@ -2750,25 +2750,6 @@ input, select, textarea {
 				opacity: 1;
 			}
 
-			/* Enable tap-to-reveal effect on touch devices */
-body.is-touch .tiles article.hover > .image {
-  transform: scale(1.1);
-}
-
-body.is-touch .tiles article.hover > .image:before {
-  background-color: #333333;
-  opacity: 0.35;
-}
-
-body.is-touch .tiles article.hover > .image:after {
-  opacity: 0;
-}
-
-body.is-touch .tiles article.hover .content {
-  max-height: 15em;
-  opacity: 1;
-}
-
 		* + .tiles {
 			margin-top: 2em;
 		}
