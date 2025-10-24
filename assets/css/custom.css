@@ -144,3 +144,11 @@ body.landing header p {
     background-color: transparent !important;
     transition: opacity 0.3s ease, background-color 0.3s ease;
 }
+/* 모바일에서 터치 시 오버레이 제거 */
+@media screen and (max-width: 768px) {
+    .tiles article.no-overlay > .image:before {
+        opacity: 0 !important;
+        background-color: transparent !important;
+        pointer-events: none;
+    }
+}
