@@ -3404,6 +3404,8 @@ body:not(.landing) #header .logo .symbol img {
         height: auto;
     }
 }
-.tiles article .image.no-overlay::before {
+/* 모바일 터치 시 오버레이 제거 */
+.tiles article.no-overlay > .image:before {
   opacity: 0 !important;
+  transition: opacity 0.3s ease;
 }
