@@ -434,37 +434,37 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-		<script>
-  // 모바일 터치 중 오버레이 사라지게 하기
-  document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.tiles article .image');
+	<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const articles = document.querySelectorAll('.tiles article');
 
-    images.forEach(image => {
-      let touching = false;
+    articles.forEach(article => {
+        let touching = false;
 
-      image.addEventListener('touchstart', () => {
-        touching = true;
-        image.parentElement.classList.add('no-overlay');
-      });
+        article.addEventListener('touchstart', () => {
+            touching = true;
+            article.classList.add('no-overlay');
+        });
 
-      image.addEventListener('touchmove', () => {
-        if (touching) {
-          image.parentElement.classList.add('no-overlay');
-        }
-      });
+        article.addEventListener('touchmove', () => {
+            if (touching) {
+                article.classList.add('no-overlay');
+            }
+        });
 
-      image.addEventListener('touchend', () => {
-        touching = false;
-        image.parentElement.classList.remove('no-overlay');
-      });
+        article.addEventListener('touchend', () => {
+            touching = false;
+            article.classList.remove('no-overlay');
+        });
 
-      image.addEventListener('touchcancel', () => {
-        touching = false;
-        image.parentElement.classList.remove('no-overlay');
-      });
+        article.addEventListener('touchcancel', () => {
+            touching = false;
+            article.classList.remove('no-overlay');
+        });
     });
-  });
+});
 </script>
+
 			<script src="assets/js/main.js"></script>
 
 
