@@ -436,5 +436,42 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const tiles = document.querySelectorAll(".tiles a");
+
+    let touchStartY = 0;
+    let touchEndY = 0;
+    let touchStartTime = 0;
+
+    tiles.forEach(link => {
+      link.addEventListener("touchstart", e => {
+        touchStartY = e.changedTouches[0].clientY;
+        touchStartTime = new Date().getTime();
+      });
+
+      link.addEventListener("touchmove", e => {
+        touchEndY = e.changedTouches[0].clientY;
+      });
+
+      link.addEventListener("touchend", e => {
+        const touchDuration = new Date().getTime() - touchStartTime;
+        const touchDistance = Math.abs(touchEndY - touchStartY);
+
+        // 스크롤 동작 방지 조건
+        if (touchDistance > 10) {
+          e.preventDefault(); // 스크롤일 경우 클릭 무시
+          return;
+        }
+
+        // 너무 짧은 탭만 링크 이동 (예: 500ms 미만)
+        if (touchDuration < 500) {
+          window.location = link.href;
+        }
+      });
+    });
+  });
+</script>
+
 	</body>
 </html>
