@@ -138,3 +138,9 @@ body.landing header p {
         max-width: 100%;
     }
 }
+/* 모바일에서 드래그 시 오버레이 제거 */
+.tiles article.no-overlay > .image:before {
+    opacity: 0 !important;
+    background-color: transparent !important;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
