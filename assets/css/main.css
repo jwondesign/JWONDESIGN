@@ -3404,3 +3404,6 @@ body:not(.landing) #header .logo .symbol img {
         height: auto;
     }
 }
+.tiles article .image.no-overlay::before {
+  opacity: 0 !important;
+}
