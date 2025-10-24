@@ -3409,3 +3409,7 @@ body:not(.landing) #header .logo .symbol img {
   opacity: 0 !important;
   transition: opacity 0.3s ease;
 }
+/* 스크롤 중 터치 시 반응 속도 개선 */
+.tiles article.no-overlay > .image:before {
+  transition: opacity 0.1s ease !important;
+}
