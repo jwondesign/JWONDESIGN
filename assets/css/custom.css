@@ -76,7 +76,7 @@ body.landing header p {
 .image-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     justify-content: center;
     margin-bottom: 1em;
 }
