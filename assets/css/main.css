@@ -3345,7 +3345,8 @@ body:not(.landing) #header .logo .symbol img {
     display: flex;           /* 내부 img를 stretch 시키기 위해 */
 }
 
-.image-row .image.main img {
+.image-row .image.main img,
+.image.main:not(.image-row .image.main) img {
      width: 100%;
     height: 500px;        
     max-height: 500px;   
